@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 import pathlib
+from datetime import timedelta
 
 # Build paths inside the project like this: BASE_DIR / ...
 BASE_DIR = pathlib.Path(__file__).parent.parent
@@ -102,6 +103,19 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+#REST_FRAMEWOEK
+REST_FRAMEWORK = {
+    
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
+   
+}
+
+SIMPLE_JWT = {
+    "ACCESS_TOKEN_LIFETIME": timedelta(days =1 )
+}
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
